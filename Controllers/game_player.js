@@ -10,7 +10,6 @@ class gamePlayer extends gameObject{
     this.y = info.y;
     this.width = info.width;
     this.height = info.height;
-    this.color = info.color;
 
     // right 1, left 0
     this.direction = 1;
@@ -19,7 +18,7 @@ class gamePlayer extends gameObject{
 
     this.gravity = 50;
     this.speedx = 300;
-    this.speedy = 1000;
+    this.speedy = 800;
     this.ctx = this.root.gameMap.ctx;
     // idle 0
     // move front 1
@@ -32,6 +31,7 @@ class gamePlayer extends gameObject{
     this.pressKeys = this.root.gameMap.keyEvent.pressKeys;
 
     this.animations = new Map();
+    this.frameRenderCount = 0;
   }
   start(){
 
@@ -54,7 +54,12 @@ class gamePlayer extends gameObject{
     }
     if(this.status == 0 || this.status == 1 || this.status == 2){
       // console.log('here');
-      if(w){
+      if(space){
+        this.status = 4;
+        this.vx = 0;
+        this.frameRenderCount = 0;
+      } else if(w){
+        this.frameRenderCount = 0;
         if(d){
           this.vx = this.speedx;
         } else if(a){
@@ -62,6 +67,7 @@ class gamePlayer extends gameObject{
         } else {
           this.vx = 0;
         }
+        // not at wall
         this.vy = -this.speedy;
         this.status = 3;
       } else if(d){
@@ -81,7 +87,9 @@ class gamePlayer extends gameObject{
   }
 
   updateMove(){
-    this.vy += this.gravity;
+    // jump status, add gravity
+    if(this.status == 3)
+      this.vy += this.gravity;
 
     this.x += this.vx * this.timeDelta / 1000;
     this.y += this.vy * this.timeDelta / 1000;
@@ -93,29 +101,62 @@ class gamePlayer extends gameObject{
       this.status = 0;
     }
     // hit left wall
-    if(this.x < 0)
-    {
+    if(this.x < 0){
       this.vx = 0;
       this.x = 0;
-      this.status = 0;
     }
-    // console.log(this.root.gameMap.canvasDOM.width);
+    // hit right wall
     if(this.x + this.width > this.root.gameMap.canvasDOM.width){
       this.vx = 0;
       this.x = this.root.gameMap.canvasDOM.width - this.width;
-      this.status = 0;
     }
   }
+
+  updateDirection(){
+    let players = this.root.players;
+    if(players[0] && players[1]){
+      let me = this, you = players[1^this.id];
+      if(me.x < you.x) me.direction = 1;
+      else me.direction = -1;
+    }
+  }
+
   update(){
+    this.updateDirection();
     this.updateControl();
     this.updateMove();
     this.render();
   }
 
   render(){
-    this.ctx.fillStyle = this.color;
+    // this.ctx.fillStyle = this.color;
     // console.log(this.x, this.y, this.width, this.height)
-    this.ctx.fillRect(this.x, this.y, this.width, this.height);
+    // this.ctx.fillRect(this.x, this.y, this.width, this.height);
+    let obj = this.animations.get(this.status);
+    if(this.status === 3){
+      obj.frameRate = 4;
+    }
+    if(obj && obj.loaded){
+      if(this.direction > 0){
+        let k = parseInt(this.frameRenderCount / obj.frameRate) % obj.frameCnt;
+        let image = obj.gif .frames[k].image;
+        this.ctx.drawImage(image, this.x + obj.offsetX, this.y + obj.offsetY, image.width * obj.scale, image.height * obj.scale);
+      } else {
+        this.ctx.save();
+        this.ctx.scale(-1, 1);
+        this.ctx.translate(-this.root.gameMap.canvasDOM.width, 0);
+        let k = parseInt(this.frameRenderCount / obj.frameRate) % obj.frameCnt;
+        let image = obj.gif .frames[k].image;
+        this.ctx.drawImage(image, obj.offsetX + this.root.gameMap.canvasDOM.width - this.width - this.x, this.y + obj.offsetY, image.width * obj.scale, image.height * obj.scale);
+        this.ctx.restore();
+      }
+      
+    }
+    // attack done
+    if(this.status === 4 && this.frameRenderCount === obj.frameRate * (obj.frameCnt - 1)){
+      this.status = 0;
+    }
+    this.frameRenderCount ++ ;
   }
 }
 

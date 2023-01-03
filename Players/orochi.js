@@ -1,17 +1,17 @@
 import { gamePlayer } from "../Controllers/game_player";
 import { GIF } from "../utils/gif"
 
-class Kyo extends gamePlayer{
+class Orochi extends gamePlayer{
   constructor(root, info){
     super(root, info);
     this.init();
   }
   init(){
-    let offsetY = [0, -22, -22, -140, 0, 0, 0]
-    let offsetX = [0, 0, 0, -50, 0, 0, 0]
+    let offsetY = [0, 0, 0, -200, -35, 0, 0]
+    let offsetX = [0, 0, 0, -30, -60, 0, 0]
     for (let i = 0; i < 7; i++){
       let gif = GIF();
-      gif.load(`../images/player/kyo/${i}.gif`);
+      gif.load(`../images/player/orochi/${i}.gif`);
       this.animations.set(i, {
         gif: gif,
         frameCnt: 0,
@@ -30,4 +30,4 @@ class Kyo extends gamePlayer{
   }
 }
 
-export { Kyo }
+export { Orochi }

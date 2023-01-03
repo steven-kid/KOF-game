@@ -1,26 +1,25 @@
 import { gameMap } from './Controllers/game_map';
-import { gamePlayer } from './Controllers/game_player';
+import { Kyo } from './Players/kyo';
+import { Orochi } from './Players/orochi'
 
 class KOF {
   constructor(id) {
     this.kofDOM = document.querySelector(`#${id}`);
     this.gameMap = new gameMap(this);
-    let players = [
-      new gamePlayer(this, {
+    this.players = [
+      new Kyo(this, {
         id: 0,
         x: 250,
         y: -100,
         width: 120,
-        height: 170,
-        color: 'red'
+        height: 170
       }),
-      new gamePlayer(this, {
+      new Orochi(this, {
         id: 1,
         x: 750,
         y: -100,
         width: 120,
-        height: 170,
-        color: 'blue'
+        height: 170
       })
     ]
   }

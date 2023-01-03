@@ -24,9 +24,9 @@ class gameMap extends gameObject {
   render(){
     // console.log(this.ctx.canvas.width)
     // console.log(this.ctx.fillStyle)
-    this.ctx.fillStyle = 'black';
-    this.ctx.fillRect(0, 0, this.canvasDOM.width, this.canvasDOM.height);
-    // this.ctx.clearRect(0, 0, this.canvasDOM.width, this.canvasDOM.height);
+    // this.ctx.fillStyle = 'black';
+    // this.ctx.fillRect(0, 0, this.canvasDOM.width, this.canvasDOM.height);
+    this.ctx.clearRect(0, 0, this.canvasDOM.width, this.canvasDOM.height);
   }
 }
 
