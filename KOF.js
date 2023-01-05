@@ -8,7 +8,7 @@ class KOF {
     this.gameMap = new gameMap(this);
     this.players = [
       new Kyo(this, 0),
-      new Orochi(this, 1),
+      new Kyo(this, 1),
     ]
   }
 }

@@ -48,24 +48,26 @@ class gamePlayer extends gameObject{
   start(){
   }
   updateControl(){
-    let w, a, s, d, space;
+    let w, a, s, d, attack, defense;
     // console.log(this.id);
     if(this.id == 0){
       w = this.pressKeys.has('w');
       a = this.pressKeys.has('a');
       s = this.pressKeys.has('s');
       d = this.pressKeys.has('d');
-      space = this.pressKeys.has(' ');
+      attack = this.pressKeys.has('g');
+      defense = this.pressKeys.has('h');
     } else {
       w = this.pressKeys.has('ArrowUp');
       a = this.pressKeys.has('ArrowLeft');
       s = this.pressKeys.has('ArrowDown');
       d = this.pressKeys.has('ArrowRight');
-      space = this.pressKeys.has('Enter');
+      attack = this.pressKeys.has('k');
+      defense = this.pressKeys.has('l');
     }
     if(this.status == 0 || this.status == 1 || this.status == 2){
       // console.log('here');
-      if(space){
+      if(attack){
         this.status = 4;
         this.vx = 0;
         this.frameRenderCount = 0;

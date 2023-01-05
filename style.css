@@ -1,32 +1,62 @@
 * {
-    margin: 0;
-    border: 0;
-    box-sizing: border-box;
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
 }
 
-#kof{
-    position: fixed;
-    top: 108px;
+body {
+  background-image: urL(./images/background/monitor.jpg);
+  background-size: 1480px 788px;
+  background-repeat: no-repeat;
+  background-position: center 0%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  z-index: -5;
 }
 
-body{
-    background-image: urL(./images/background/monitor.jpg);
-    background-size: 1480px 788px;
-    background-repeat:no-repeat;
-    background-position: center 0%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    z-index: -5;
+#kof {
+  position: fixed;
+  top: 108px;
+  width: 1080px;
+  height: 500px;
+  background-image: url(./images/background/0.gif);
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: 180% 100%;
+  z-index: 10;
 }
 
-#kof{
-    width: 1080px;
-    height: 500px;
-    background-image: url(./images/background/0.gif);
-    background-position: top;
-    background-repeat:no-repeat;
-    background-size: 180% 100%;
-    z-index: 10;
+#mask {
+  position: fixed;
+  top: 104px;
+  width: 1084px;
+  height: 508px;
+  z-index: 20;
+  background-image: url(./images/background/mask.png);
+  background-size: 90% 100%;
+  background-position: top;
+  background-color: #414950;
+  background-repeat: no-repeat;
+}
+
+#msg {
+  position: fixed;
+  top: 534px;
+  font-size: 40px;
+  z-index: 20;
+  font-family: "Algerian";
+  color: #fff;
+  animation: scaleout 2s infinite ease-in-out;
+}
+
+@keyframes scaleout {
+    0% {
+        transform: scale(1.0);
+        opacity: 0;
+    } 
+    100% {
+        transform: scale(1.1);
+    }
 }
