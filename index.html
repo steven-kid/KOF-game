@@ -3,11 +3,30 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Rubik+Mono+One&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>KOF game</title>
   </head>
   <body>
     <div id="mask"></div>
+    <div id="end">
+      <button id="btn">Restart</button>
+    </div>
+    <div id="hp">
+      <img src="./images/player/orochi/avatar.png" id="img-0"></img>
+      <div id="hp0">
+        <div id="hp0-line-back"></div> 
+        <div id="hp0-line"></div>
+      </div>
+      <div id="count-down">10</div>
+      <div id="hp1">
+        <div id="hp1-line"></div>
+        <div id="hp1-line-back"></div>
+      </div>
+      <img src="./images/player/kyo/avatar.png" id="img-1"></img>
+    </div>
     <div id="kof">
     </div>
     <div id="msg"></div>

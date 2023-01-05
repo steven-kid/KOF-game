@@ -1,4 +1,5 @@
 import { gameObject } from "./game_object";
+import { gsap } from 'gsap'
 
 class gamePlayer extends gameObject{
   constructor(root, info){
@@ -188,6 +189,12 @@ class gamePlayer extends gameObject{
           you.status = 5;
           you.frameRenderCount = 0;
           you.hp = Math.max(you.hp - this.atk, 0);
+          if(you.hp <= 15){
+            document.querySelector(`#hp${1^this.id}-line`).style.backgroundColor = 'red';
+          }
+          if(you.hp > 10)
+            gsap.fromTo(`#hp${1^this.id}-line-back `, {width: '40px'}, {duration: 1.2, ease: 'power2', width: '0px'});
+          gsap.to(`#hp${1^this.id}-line`, {duration: 0.6, ease: 'power2', width: `${you.hp}%`});
           if(you.hp === 0)
             you.status = 6;
         }

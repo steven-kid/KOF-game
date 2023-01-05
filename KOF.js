@@ -7,8 +7,8 @@ class KOF {
     this.kofDOM = document.querySelector(`#${id}`);
     this.gameMap = new gameMap(this);
     this.players = [
-      new Kyo(this, 0),
-      new Kyo(this, 1),
+      new Orochi(this, 0),
+      new Kyo(this, 1)
     ]
   }
 }
