@@ -5,6 +5,7 @@
   font-family: "Algerian";
   user-select: none;
   -webkit-user-drag: none;
+  color: #fff;
 }
 
 body {
@@ -42,6 +43,7 @@ body {
   background-position: top;
   background-color: #414950;
   background-repeat: no-repeat;
+  opacity: 1;
 }
 
 #msg {
@@ -99,6 +101,7 @@ body {
 
 #hp0-line-back, #hp1-line-back{
     background-color: red;
+    opacity: 0.85;
     width: 0px;
 }
 
@@ -133,6 +136,20 @@ img{
     border-top-left-radius: 0;
 }
 
+#name-0{
+    position: absolute;
+    top: 40px;
+    left: 90px;
+    font-size: 30px;
+}
+
+#name-1{
+    position: absolute;
+    top: 40px;
+    right: 90px;
+    font-size: 30px;
+}
+
 #end{
  position: fixed;
   top: 104px;
@@ -143,18 +160,23 @@ img{
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 }
 
 #end > button{
-    width: 200px;
-    height: 80px;
-    font-size: 40px;
+    width: 150px;
+    height: 50px;
+    font-size: 30px;
     border-radius: 10px;
-    border:3px solid #fff;
+    /* border:3px solid #fff; */
     color: #fff;
     background-color: #414950;
     /* box-shadow: 5px 15px 5px 5px #2f3438; */
-    transition: all 0.5s;
+    transition: 0.3s;
+}
+
+#end > button:not(:last-child){
+    margin-bottom: 0px;
 }
 
 #end > button:hover{
@@ -164,6 +186,30 @@ img{
 #end > button:active{
     transform: translate(0,4px);
     box-shadow: 2px 1px 2px 2px #2f3438;
+}
+
+#end > p{
+    margin-bottom: 40px;
+    font-size: 60px;
+    color: #fff;
+}
+
+#white-mask {
+    position: fixed;
+    top: 0px;
+    width: 1110px;
+    height: 93px;
+    z-index: 30;
+    background-color: #fff;
+  }
+
+#extra-time{
+    opacity: 0;
+    position: fixed;
+    z-index: 25;
+    font-size: 80px;
+    animation: msg-flash 1s infinite ease-in-out;
+    top: 300px;
 }
 
 @keyframes msg-flash {

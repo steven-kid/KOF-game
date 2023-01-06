@@ -10,12 +10,18 @@
     <title>KOF game</title>
   </head>
   <body>
+    <div id="white-mask"></div>
     <div id="mask"></div>
     <div id="end">
-      <button id="btn">Restart</button>
+      <p>The winner is <span id="winner">"P1"</span></p>
+      <button class="btn" id="rematch">Rematch</button>
+      <button class="btn" id="restart">Restart</button>
     </div>
+    <div id="extra-time">Extra 20 second</div>
     <div id="hp">
-      <img src="./images/player/orochi/avatar.png" id="img-0"></img>
+      <img src="./images/player/orochi/avatar.png" id="img-0">
+      <div id="name-0">Orochi</div>
+    </img>
       <div id="hp0">
         <div id="hp0-line-back"></div> 
         <div id="hp0-line"></div>
@@ -25,7 +31,9 @@
         <div id="hp1-line"></div>
         <div id="hp1-line-back"></div>
       </div>
-      <img src="./images/player/kyo/avatar.png" id="img-1"></img>
+      <img src="./images/player/kyo/avatar.png" id="img-1">
+      <div id="name-1">Kyo</div>
+    </img>
     </div>
     <div id="kof">
     </div>
