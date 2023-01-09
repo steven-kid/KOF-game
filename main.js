@@ -61,3 +61,14 @@ document.querySelector('#restart').addEventListener('click', () => {
   location.reload();
 })
 
+document.querySelector('#rematch').addEventListener('click', () => {
+  endDom.style.display = 'none'
+  kof.reset();
+  countDown.textContent = 60;
+  timer = setInterval(function()  {
+    countDown.textContent = Math.max(parseInt(countDown.textContent) - 1, 0);
+    endGameCheck();
+  }, 1000);   
+  canvasDom.focus();
+})
+

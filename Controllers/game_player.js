@@ -214,7 +214,7 @@ class gamePlayer extends gameObject{
     // console.log(this.x, this.y, this.width, this.height)
     // this.ctx.fillRect(this.x, this.y, this.width, this.height);
     let obj = this.animations.get(this.status);
-    
+    // console.log(this.pressKeys)
     if(obj && obj.loaded){
       if(this.direction > 0){
         // this.ctx.fillRect(this.x + this.attack1.x, this.y + this.attack2.y, this.attack1.w, this.attack2.h);

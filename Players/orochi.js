@@ -19,7 +19,7 @@ class Orochi extends gamePlayer{
   init(){
     let offsetY = [0, 0, 0, -200, -35, -52, -52]
     let offsetX = [0, 0, 0, -30, -60, -230, -70]
-    for (let i = 0; i < 7; i++){
+    for (let i = 0; i < 7; i++ ){
       let gif = GIF();
       gif.load(`../images/player/orochi/${i}.gif`);
       this.animations.set(i, {

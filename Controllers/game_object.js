@@ -43,4 +43,4 @@ let frame = (timeStamp) => {
 // start recursion
 requestAnimationFrame(frame);
 
-export { gameObject };
+export { gameObject };  
