@@ -14,7 +14,7 @@ header{
 
 body {
   width: 100%;
-  background-image: urL(./images/background/monitor.jpg);
+  background-image: urL(./public/images/background/monitor.jpg);
   background-size: 1480px 788px;
   background-repeat: no-repeat;
   background-position: center 0%;
@@ -30,7 +30,7 @@ body {
   top: 108px;
   width: 1080px;
   height: 500px;
-  background-image: url(./images/background/0.gif);
+  background-image: url(./public/images/background/0.gif);
   background-position: top;
   background-repeat: no-repeat;
   background-size: 180% 100%;
@@ -43,7 +43,7 @@ body {
   width: 1084px;
   height: 508px;
   z-index: 25;
-  background-image: url(./images/background/mask.png);
+  background-image: url(./public/images/background/mask.png);
   background-size: 90% 100%;
   background-position: top;
   background-color: #414950;
