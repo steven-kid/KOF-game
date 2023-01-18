@@ -14,7 +14,7 @@ header{
 
 body {
   width: 100%;
-  /* background-image: urL(./public/images/background/monitor.jpg); */
+  background-image: urL(./public/images/background/bg.jpg);
   background-size: 1480px 788px;
   background-repeat: no-repeat;
   background-position: center 0%;
