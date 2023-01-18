@@ -18,7 +18,6 @@ endDom.style.display = 'none'
 
 document.querySelector('body').style.opacity = '0';
 document.querySelector('body').style.opacity = '1';
-document.querySelector('body').style.backgroundImage = 'url(https://bkimg.cdn.bcebos.com/pic/7c1ed21b0ef41bd5ad6e0999b99796cb39dbb6fd9702?x-bce-process=image/watermark,image_d2F0ZXIvYmFpa2UyNzI=,g_7,xp_5,yp_5/format,f_auto)'
 
 canvasDom.focus();
 canvasDom.style.outline = 'none';
