@@ -8,8 +8,8 @@
   color: #fff;
 }
 
-header{
-    display: none;
+header {
+  display: none;
 }
 
 body {
@@ -25,9 +25,14 @@ body {
   z-index: -5;
 }
 
-#bg{
-    width: 100px;
-    height: 100px;
+#bg {
+  width: 1500px;
+  height: 793px;
+  position: fixed;
+  top: -63px;
+  /* background-size: 1480px 788px; */
+  /* background-repeat: no-repeat; */
+  /* background-position: center 0%; */
 }
 
 #kof {
