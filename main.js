@@ -16,9 +16,6 @@ const name1 = document.querySelector('#name-1');
 extraTime.style.display = 'none';
 endDom.style.display = 'none'
 
-document.querySelector('body').style.opacity = '0';
-document.querySelector('body').style.opacity = '1';
-
 canvasDom.focus();
 canvasDom.style.outline = 'none';
 
