@@ -16,6 +16,8 @@ const name1 = document.querySelector('#name-1');
 extraTime.style.display = 'none';
 endDom.style.display = 'none'
 
+document.querySelector('body').style.backgroundImage = 'url(./public/images/background/monitor.jpg)';
+
 canvasDom.focus();
 canvasDom.style.outline = 'none';
 
